@@ -8,10 +8,13 @@
     <property name="connection.password">usbw</property>
     <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
     <property name="hibernate.show_sql">true</property>
+	<property name="hbm2ddl.auto">create-drop</property>
 
     <mapping class="POJO.Autor" />
     <mapping class="POJO.Libro" />
  	<mapping class="POJO.Telefono" />      
-
+	
   </session-factory>
+
+
 </hibernate-configuration>

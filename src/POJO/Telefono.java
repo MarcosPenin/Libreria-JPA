@@ -8,7 +8,6 @@ import javax.persistence.Table;
 @Table(name = "Telefono")
 public class Telefono {
 	@Id
-	@Column(name = "dniAutor")
 	private String dniAutor;
 
 	public String getDniAutor() {
@@ -35,7 +34,6 @@ public class Telefono {
 		this.numeroTelefono = numeroTelefono;
 	}
 
-	@Column(name = "numeroTelefono")
 	private String numeroTelefono;
 
 }
