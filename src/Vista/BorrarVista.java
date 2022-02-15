@@ -1,16 +1,20 @@
 package Vista;
 
+import POJO.Autor;
 import POJO.Libro;
 
 public class BorrarVista {
 
-	public static int pedirLibro() {
-		return 1;
+	public static Autor pedirAutor() {
+		Autor autor = new Autor("56565656L", "Dovtoyevski", "Rusia");
+		return autor;
 	}
 
-	public static void imprimirLibro(Libro libro) {
-		System.out.println(libro.toString());
-		
+	public static Libro pedirLibro() {
+		Libro libro = new Libro("Crimen y Castigo", 12);
+		return libro;
 	}
 
+	
+	
 }

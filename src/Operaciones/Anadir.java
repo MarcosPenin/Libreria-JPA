@@ -17,9 +17,7 @@ public class Anadir {
 		session.save(autor);
 		session.getTransaction().commit();
 		session.close();
-	}
-	
-	
+	}		
 	
 	public static void anadirLibro() {		
 		Session session = AbrirSesion.abrirSesion();

@@ -59,6 +59,11 @@ public class Libro {
 	}
     
 
+	public String toString() {
+		return titulo;
+	}
+	
+	
 
 }
 

@@ -24,14 +24,16 @@ public class CreacionTablas {
 		Telefono t1 = new Telefono("34342414L", "986232323");
 		Telefono t2 = new Telefono("34342414P", "620676767");
 
+		
 		a1.anadirLibro(l2);
 		a1.anadirLibro(l3);
 		a1.setTelefono(t1);
 		
+		
 		a2.anadirLibro(l1);
 		a2.setTelefono(t2);
 
-		session.save(a1);
+		session.save(a1);		
 		session.save(a2);
 
 		session.getTransaction().commit();
