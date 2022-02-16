@@ -77,7 +77,11 @@ public class Autor {
 	}
 	
 	public String toString() {
-		return this.nombre;
+		String respuesta=nombre+"\t"+dniAutor+"\t"+nacionalidad+"\tLibros:";
+		for(Libro x:libros) {
+			respuesta+="\n"+x.toString();
+		}
+		return respuesta;
 	}
 	
 

@@ -1,29 +1,21 @@
 package Main;
 
+import org.hibernate.Session;
 
-import Operaciones.Anadir;
-import Operaciones.Borrar;
-import Operaciones.Consultar;
-import Operaciones.CreacionTablas;
-
+import Operaciones.Sesion;
+import Vista.Mensajes;
+import Vista.VerMenu;
 
 public class Main {
-	
-	  public static void main(String[] args) {     		  
-		  CreacionTablas.CreacionTablas();
-		  
-	//	  Anadir.anadirAutor(); 
-	//	  Anadir.anadirLibro();
-		  
-//		  Consultar.consultarAutor();
-//		  Consultar.consultarLibro();
-		  
-//		  Borrar.borrarAutor();
-//		  Borrar.borrarLibro();
-		  
-//		  Consultar.consultarLibros();
-//		  Consultar.librosAutor();
 
-	    }
+	public static void main(String[] args) {
+//		CreacionTablas.CreacionTablas();
+		Session session = Sesion.abrirSesion();
+		session.beginTransaction();
+		VerMenu.menuPrincipal(session);		
+		session.close();
+		Mensajes.sesionTerminada();
+
+	}
 
 }

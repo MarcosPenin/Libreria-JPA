@@ -10,22 +10,16 @@ import Vista.AnadirVista;
 
 public class Anadir {
 
-	public static void anadirAutor() {
-		Session session = Sesion.abrirSesion();
-		session.beginTransaction();
+	public static void anadirAutor(Session session) {
 		Autor autor=AnadirVista.pedirAutor();
 		session.save(autor);
 		session.getTransaction().commit();
-		session.close();
 	}		
 	
-	public static void anadirLibro() {		
-		Session session = Sesion.abrirSesion();
-		session.beginTransaction();
+	public static void anadirLibro(Session session) {		
 		Libro libro=AnadirVista.pedirLibro();		
 		session.save(libro);
 		session.getTransaction().commit();
-		session.close();
 	}
 	
 }
