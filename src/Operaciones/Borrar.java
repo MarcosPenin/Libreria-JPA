@@ -10,7 +10,7 @@ import Vista.ConsultarVista;
 public class Borrar {
 
 	public static void borrarAutor() {
-		Session session = AbrirSesion.abrirSesion();
+		Session session = Sesion.abrirSesion();
 		session.beginTransaction();
 		String dniAutor = ConsultarVista.pedirAutor();		
 		Autor autor = session.get(Autor.class, dniAutor);
@@ -20,7 +20,7 @@ public class Borrar {
 	}
 
 	public static void borrarLibro() {
-		Session session = AbrirSesion.abrirSesion();
+		Session session = Sesion.abrirSesion();
 		session.beginTransaction();
 		int id = ConsultarVista.pedirLibro();
 		Libro libro = session.get(Libro.class, id);

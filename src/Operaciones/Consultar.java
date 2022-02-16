@@ -11,7 +11,7 @@ import Vista.ConsultarVista;
 public class Consultar {
 
 	public static void consultarAutor() {
-		Session session = AbrirSesion.abrirSesion();
+		Session session = Sesion.abrirSesion();
 		session.beginTransaction();
 		String dniAutor = ConsultarVista.pedirAutor();
 		Autor autor = session.get(Autor.class, dniAutor);
@@ -20,7 +20,7 @@ public class Consultar {
 	}
 
 	public static void consultarLibro() {
-		Session session = AbrirSesion.abrirSesion();
+		Session session = Sesion.abrirSesion();
 		session.beginTransaction();
 		int id = ConsultarVista.pedirLibro();
 		Libro libro = session.get(Libro.class, id);
@@ -29,8 +29,8 @@ public class Consultar {
 	}
 
 	public static void librosAutor() {
-		Session session = AbrirSesion.abrirSesion();
-		session.beginTransaction();
+		Session session = Sesion.abrirSesion();
+		session.beginTransaction();		
 		String dniAutor = ConsultarVista.pedirAutor();
 		Autor autor = session.get(Autor.class, dniAutor);
 
@@ -39,10 +39,9 @@ public class Consultar {
 		}
 		session.close();
 	}
-
 	
 	public static void consultarLibros() {
-		Session session = AbrirSesion.abrirSesion();
+		Session session = Sesion.abrirSesion();
 		session.beginTransaction();
 
 		List<Libro> libros = (List<Libro>) session.createQuery("FROM Libro").getResultList();

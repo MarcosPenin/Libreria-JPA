@@ -18,9 +18,11 @@ public class Autor {
 	@PrimaryKeyJoinColumn
 	private Telefono telefono;
 
-	@ManyToMany(cascade = { CascadeType.ALL }, mappedBy = "autores")
-	private Set<Libro> libros = new HashSet();
-
+	@ManyToMany(cascade = {CascadeType.ALL})
+	@JoinTable(name="autor_libro", joinColumns={@JoinColumn(name="dniAutor")}, inverseJoinColumns={@JoinColumn(name="idLibro")})
+	private Set<Libro> libros = new HashSet<>();
+	
+	
 	public Autor() {
 	}
 

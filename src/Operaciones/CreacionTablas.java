@@ -11,7 +11,7 @@ import POJO.Telefono;
 public class CreacionTablas {
 
 	public static void CreacionTablas() {		
-		Session session = AbrirSesion.abrirSesion();
+		Session session = Sesion.abrirSesion();
 		session.beginTransaction();
 
 		Autor a1 = new Autor("34342414L", "Asimov", "EEUU");

@@ -11,14 +11,14 @@ public class Libro {
 
     @Id
     @GeneratedValue
+    @Column(name = "IdLibro", updatable = false, nullable = false)
     private int idLibro;
     
     private String titulo;
     
     private double precio;
     
-    @ManyToMany(cascade = {CascadeType.ALL},fetch=FetchType.EAGER)
-    @JoinTable(name="Autor_Libro", joinColumns={@JoinColumn(name="idLibro")}, inverseJoinColumns={@JoinColumn(name="dniAutor")})
+    @ManyToMany(cascade = {CascadeType.ALL},mappedBy="libros")
     private Set<Autor> autores=new HashSet();
          
 	public Libro(){ 
