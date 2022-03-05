@@ -77,7 +77,7 @@ public class Autor {
 	}
 	
 	public String toString() {
-		String respuesta=nombre+"\t"+dniAutor+"\t"+nacionalidad+"\tLibros:";
+		String respuesta="Nombre: "+ nombre+"\t"+"Dni: "+dniAutor+"\t"+"Nacionalidad: "+nacionalidad+"\tLibros: ";
 		for(Libro x:libros) {
 			respuesta+="\n"+x.toString();
 		}

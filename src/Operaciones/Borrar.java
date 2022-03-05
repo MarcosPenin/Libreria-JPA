@@ -13,6 +13,7 @@ public class Borrar {
 		String dniAutor = BorrarVista.pedirAutor();
 		Autor autor = session.get(Autor.class, dniAutor);
 		try {
+			session.beginTransaction();
 			session.remove(autor);
 			session.getTransaction().commit();
 		} catch (IllegalArgumentException e) {
@@ -24,6 +25,7 @@ public class Borrar {
 		int id = BorrarVista.pedirCodigo();
 		Libro libro = session.get(Libro.class, id);
 		try {
+			session.beginTransaction();
 			session.remove(libro);
 			session.getTransaction().commit();
 		} catch (IllegalArgumentException e) {

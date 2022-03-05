@@ -39,5 +39,10 @@ public class Mensajes {
 		System.out.println("Aún no se ha registrado ningún autor");
 		
 	}
+	
+	public static void separador() {
+		System.out.println("************************************************************");
+		
+	}
 
 }

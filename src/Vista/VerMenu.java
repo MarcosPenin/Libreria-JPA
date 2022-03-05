@@ -58,6 +58,9 @@ public class VerMenu {
 		case 2:
 			Anadir.anadirLibro(session);
 			break;
+		case 3:
+			Anadir.vincularLibro(session);
+			break;
 
 		}
 
@@ -114,6 +117,7 @@ public class VerMenu {
 		ArrayList<String> opciones = new ArrayList<String>();
 		opciones.add("Autor");
 		opciones.add("Libro");
+		opciones.add("Añadir libro a un autor");
 		opciones.add("Volver");
 		return opciones;
 	}

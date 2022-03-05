@@ -9,26 +9,21 @@ import POJO.Libro;
 import Vista.ConsultarVista;
 import Vista.Mensajes;
 
+
 public class Consultar {
 
 	public static void libro(Session session) {
 		String titulo = ConsultarVista.pedirLibroNombre();
-		String c = "select i from Libro i";
-		List<Libro> libros = session.createQuery(c).list();
-		if (libros.isEmpty()) {
-			Mensajes.sinLibros();
-		}
-		boolean flag=true;
-		for (Libro i : libros) {
-			if (i.getTitulo().equalsIgnoreCase(titulo)) {
-				ConsultarVista.imprimirLibro(i);
-				flag=false;
-			}
-		}
-		if (flag) {
+		String c = "select i from Libro i where titulo='"+titulo+"'";	 
+		Libro libro = (Libro) session.createQuery(c).list();
+		if(libro!=null) {
+			ConsultarVista.imprimirLibro(libro);
+		}else {
 			Mensajes.libroNoEncontrado();
 		}
+		
 	}
+		
 
 	public static void librosAutor(Session session) {
 		String nombre = ConsultarVista.pedirAutor();
@@ -41,6 +36,7 @@ public class Consultar {
 		for (Autor i : autores) {
 			if (i.getNombre().equalsIgnoreCase(nombre)) {
 				ConsultarVista.imprimirLibros(i);
+				Mensajes.separador();
 				flag = false;
 			}
 		}
@@ -56,6 +52,8 @@ public class Consultar {
 		}
 		for (Libro x : libros) {
 			ConsultarVista.imprimirLibro(x);
+			Mensajes.separador();
+			
 		}
 
 	}
@@ -69,6 +67,7 @@ public class Consultar {
 
 		for (Autor i : autores) {
 			ConsultarVista.imprimirAutor(i);
+			Mensajes.separador();
 		}
 	}
 

@@ -60,7 +60,7 @@ public class Libro {
     
 
 	public String toString() {
-		return titulo+"\t"+precio;
+		return "Título: "+titulo+"\t"+"Precio: "+precio;
 	}
 	
 	

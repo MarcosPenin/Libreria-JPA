@@ -37,7 +37,7 @@ public class CreacionTablas {
 		session.save(a2);
 
 		session.getTransaction().commit();
-		session.close();
+
 	}
 
 }
