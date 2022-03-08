@@ -16,6 +16,7 @@ public class VerMenu {
 
 	static Scanner sc = new Scanner(System.in);
 	static Menu menuTablas = new Menu(tablas());
+	static Menu menuTablas2 = new Menu(tablas2());
 	static Menu menuConsultas=new Menu(consultas());
 	static byte op;
 	static Session session;
@@ -69,7 +70,7 @@ public class VerMenu {
 	public static void menuBorrar() {
 		System.out.println("*********************************************************************");
 		System.out.println("¿Que desea borrar?");
-		menuTablas.printMenu();
+		menuTablas2.printMenu();
 		op = ControlData.lerByte(sc);
 		switch (op) {
 		case 1:
@@ -121,6 +122,15 @@ public class VerMenu {
 		opciones.add("Volver");
 		return opciones;
 	}
+	
+	static ArrayList<String> tablas2() {
+		ArrayList<String> opciones = new ArrayList<String>();
+		opciones.add("Autor");
+		opciones.add("Libro");
+		opciones.add("Volver");
+		return opciones;
+	}
+	
 
 	static ArrayList<String> consultas() {
 		ArrayList<String> opciones = new ArrayList<String>();

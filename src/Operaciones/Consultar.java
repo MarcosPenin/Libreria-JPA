@@ -15,7 +15,7 @@ public class Consultar {
 	public static void libro(Session session) {
 		String titulo = ConsultarVista.pedirLibroNombre();
 		String c = "select i from Libro i where titulo='"+titulo+"'";	 
-		Libro libro = (Libro) session.createQuery(c).list();
+		Libro libro = (Libro) session.createQuery(c).uniqueResult();
 		if(libro!=null) {
 			ConsultarVista.imprimirLibro(libro);
 		}else {

@@ -15,7 +15,7 @@ public class Main {
  */
 
 	public static void main(String[] args) {
-		CreacionTablas.CreacionTablas();
+		//CreacionTablas.CreacionTablas();
 		Session session = Sesion.abrirSesion();
 		VerMenu.menuPrincipal(session);
 		session.close();
